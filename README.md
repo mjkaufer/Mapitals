@@ -12,3 +12,4 @@ Mapitals is going to be part of something bigger, just you wait!
 	* Colors
 	* Max Neighbors & Max Border Neighbors
 	* Zoom
+	* Info on the webpage
