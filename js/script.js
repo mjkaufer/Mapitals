@@ -18,8 +18,10 @@ svgMap.onload = function(){
 
 function run(maxNeighbors, maxBorderPointNeighbors){
 
-	var maxNeighbors = maxNeighbors || 5;
-	var maxBorderPointNeighbors = maxBorderPointNeighbors || 3;
+	if(maxNeighbors === undefined)
+		maxNeighbors = 5
+	if(maxBorderPointNeighbors === undefined)
+		maxBorderPointNeighbors = 3
 
 
 	console.log(maxNeighbors, maxBorderPointNeighbors)
@@ -28,23 +30,23 @@ function run(maxNeighbors, maxBorderPointNeighbors){
 
 	canvas.innerHTML = ""
 
-    two = new Two({width: window.innerWidth, height: window.innerHeight}).appendTo(canvas)
+	two = new Two({width: window.innerWidth, height: window.innerHeight}).appendTo(canvas)
 
-    var mySvg = svgMap.contentDocument.getElementsByTagName('svg')[0]
+	var mySvg = svgMap.contentDocument.getElementsByTagName('svg')[0]
 
-    var map = two.interpret(mySvg)
+	var map = two.interpret(mySvg)
 
-    two.scene.scale = 3.5
-    two.update()
+	two.scene.scale = 3.5
+	two.update()
 
-    svgMap.style.display = "none"
+	svgMap.style.display = "none"
     
 
-    var lineGroup = new Two.Group()
+	var lineGroup = new Two.Group()
 
-    two.add(lineGroup)
+	two.add(lineGroup)
 
-    handleData(map)
+	handleData(map)
 
 
 
@@ -132,11 +134,6 @@ function run(maxNeighbors, maxBorderPointNeighbors){
 
 
 		two.update()
-
-	}	
-
-
-	return {
 
 	}
 }
